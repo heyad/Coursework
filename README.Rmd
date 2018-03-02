@@ -1,0 +1,26 @@
+---
+title: "README"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Coursework Template
+
+This repository aims to provide a general guidline to help you prepare your coursework assignment using RSweave (.rnw files). 
+
+### Files Included 
+
+1 LaTeX-Thesis-Template.zip: This is to provide more information about Latex. The template can be used for your thesis (final project), but not needed for the coursework. 
+
+2 Project-Guidelines.pdf: This is a PDF file produced using Sweave, notice that it contains a mixture of text, code and the resulting output. Basic Latex commans have been used as well. 
+
+3 Project-Guidelines.Rnw: This is the (Sweave) file, if you have R, Rstudio and Latex installed in your machine, then compiling this file will preduce **Project-Guidelines.pdf** Feel free to chagne / edit it and see the results
+
+4 references.bib: This file contains your bibtex items, check the **Project-Guidelines.Rnw** to see how we used this file to cite some papers. It must also be in your working directory.
+
+### Final Words
+
+It is important to check the .Rnw file and the comments associate with the code, the chunks headers and other details to be able to understand how the PDF file was produced.
