@@ -1,7 +1,6 @@
----
-title: "README"
-output: html_document
----
+
+# README
+
 
 
 ### Coursework Template
