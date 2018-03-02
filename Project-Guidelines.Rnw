@@ -1,0 +1,252 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx, verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{lipsum}
+\usepackage{todonotes}
+\usepackage[tableposition=top]{caption}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\setlength{\textwidth}{6.5in} 
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in} 
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = blue, %Colour for external hyperlinks
+  linkcolor    = blue, %Colour of internal links
+  citecolor   = red %Colour of citations
+}
+
+%\fancyhf{}
+\rfoot{Your Name \thepage}
+\singlespacing
+\usepackage[affil-it]{authblk} 
+\usepackage{etoolbox}
+\usepackage{lmodern}
+
+
+% Notice the following package, it will help you cite papers
+\usepackage[backend=bibtex ,sorting=none]{biblatex}
+\bibliography{references}
+
+\begin{filecontents*}{references.bib}
+
+\end{filecontents*}
+
+
+\begin{document}
+
+
+\title{\LARGE Coursework  \\ Module Name (CMM...)}
+
+\author{Your Name, \textit{\href{email@rgu.ac.uk}{email@rgu.ac.uk}}}
+\maketitle
+% \begin{flushleft} \today \end{flushleft} 
+\noindent\rule{16cm}{0.4pt}
+%\underline{\hspace{3cm}
+\ \\
+%\thispagestyle{empty}
+
+\section{Research}
+
+[your text goes here]
+The paper that was chosen for this work is \cite{6779381}. The authors provided a full review on different streaming algorithms and methos that handle concept drfit?. Below is a review of this paper that includes problem statement, related work and methods applied.\\
+
+\textcolor{blue}{\textit{Notice how I cited the paper, and how does it appear in the document, to do so, you need to have a file in your working director (references.bib), this file simply contains the bibtext items for the papers you chose. These BibTex items are often avaiable to download from publishers website, see Figure~\ref{fig1}}}
+\subsection{Problem Statement}
+What is this paper about? your text goes here, your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here
+
+\subsection{Relevant Work}
+[your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here]
+\subsection{Methods}
+[your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here]
+\subsection{Results}
+[your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here]
+\subsection{Conclusion}
+
+[your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here your text goes here]
+
+
+
+
+\section {Data Streams}
+
+The dataset that has been chosen for this part of the course work is IRIS. This is available on the UCI repository. The set was chosen because of .... It proves to be a good set for evaluating 'x' methods .... 
+
+\subsection{Data Exploration}
+
+Explore the dataset as required by the course work. Discuss, visualise, summarise ... Make sure utilise what you have learnt in the class .... Presenting results is important. Here are some expampoles.... \\
+
+It is a good practice to separate the code from the results, this makes the document more readable and easier to reproduce. Here is an example, where I want to show the class distribution in my dataset.
+
+% notice that eval=FALSE will show the code but not execute it, also notice that the comment=NA will cause the # to disappear from the output. 
+
+<<eval=FALSE,comment=NA>>=
+table(iris$Species)
+@
+
+<<echo=FALSE,comment=NA>>=
+table(iris$Species)
+@
+
+\textbf{Tables}: If you want to show results in a table format, the package \textcolor{blue}{xtable} is very useful. Here is a an example: suppose you want to show the head of iris data, a simple way is to do the following: 
+
+<<eval=FALSE,comment=NA>>=
+head(iris)
+@
+
+<<echo=FALSE,comment=NA>>=
+head(iris)
+@
+
+This is fine, but sometimes you want to produce  the results in a table-format at a better standard. See the code below. Often, I won't show the code below, nor make it executable (i.e. set eval=FALSE). Instead, run the commands below in the console, then copy the resulting latex code from consle and paste it below, and add caption and label as shown below
+
+<<eval=FALSE>>=
+# load package 
+library(xtable)
+# run the following command in the console
+print(xtable(head(iris))
+# copy the resulting latex code from consle and paste it below
+# Add caption and label as shown below
+@
+
+% latex table generated in R 3.3.0 by xtable 1.8-2 package
+% Fri Mar  2 11:56:14 2018
+\begin{table}[ht]
+\centering
+\caption{Iris Data}
+\begin{tabular}{rrrrrl}
+  \hline
+ & Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\ 
+  \hline
+1 & 5.10 & 3.50 & 1.40 & 0.20 & setosa \\ 
+  2 & 4.90 & 3.00 & 1.40 & 0.20 & setosa \\ 
+  3 & 4.70 & 3.20 & 1.30 & 0.20 & setosa \\ 
+  4 & 4.60 & 3.10 & 1.50 & 0.20 & setosa \\ 
+  5 & 5.00 & 3.60 & 1.40 & 0.20 & setosa \\ 
+  6 & 5.40 & 3.90 & 1.70 & 0.40 & setosa \\ 
+   \hline
+\end{tabular}
+\label{tab1}
+\end{table}
+
+The good thing about the above approach is you can always refer to the table in your document. For example 'As can be seen in Table~\ref{tab1},...'
+
+\textbf{Figures:} are important part of your analysis, and also good way to give insight about the dataset you are working with. You will use packages like \textit{ggplot2} to produce some visuals. Lets start with a simple example to show how to present your visuals in the report with proper labels and captions. Remember, I need to see the code the produced the figure as well. \\
+
+Suppose, I just want to create a plot that shows the relation between Petal width and length and map the colour and shape to the Species (class label in my dataset). \\
+
+First, I will write my code, but notice that my chunk definition is set as follows\\ \textit{(<<warning=FALSE,message=FALSE,eval=FALSE>>=)}, I set warning and message to FALSE, because I don't want these warnings/ messages to appear in my final output. 
+
+
+<<warning=FALSE,message=FALSE,eval=FALSE>>=
+library(ggplot2)
+
+p <- ggplot(iris, aes(x=Petal.Length, 
+                      y = Petal.Width,color=Species) )
+p <- p+ geom_point(aes(shape=Species))
+p <- p + xlab('Petal Length')
+p <- p + ylab('Petal Width')
+p <- p + theme_bw()
+p
+
+@
+
+Make sure that your code is running, and once everything is OK, then you need to insert the above code within a Latex code used to insert images (check the .rnw file to see how we achieved this). Again, remember the caption and the label which allows you to refer to this figure from anywhere in your document (Figure~\ref{fig1}). Notice the header of the chunk code in the \textit{.rnw} file. 
+
+\begin{figure}[H]
+\begin{center}
+
+<<warning=FALSE,echo=FALSE,fig.height=4.5,out.width=".76\\linewidth">>=
+library(ggplot2)
+
+p <- ggplot(iris, aes(x=Petal.Length, 
+                      y = Petal.Width,color=Species) )
+p <- p+ geom_point(aes(shape=Species))
+p <- p + xlab('Petal Length')
+p <- p + ylab('Petal Width')
+p <- p + theme_bw()
+p
+
+@
+\caption {Petal Length /Width per species in IRIS set}
+\label{fig1}
+\end {center}
+\end {figure}
+
+
+
+
+\subsection{Build Classifier}
+
+
+Complete this part as required by the coursework sheet. Again, be clear, visuals always helps in communicating results. Justify your choices and explain your methods. 
+
+
+
+
+\subsection{Build Stream Classifier}
+
+Same as above. Complete this part as required by the coursework sheet. Again, be clear, visuals always helps in communicating results. Justify your choices and explain your methods. 
+
+
+
+
+\section {Text Classification}
+
+Same as above. Complete this part as required by the coursework sheet. Again, be clear, visuals always helps in communicating results. Justify your choices and explain your methods. 
+
+
+\subsection{Preprocessing}
+
+Record, explain and justify your appraoch. Record, explain and justify your appraoch. 
+Record, explain and justify your appraoch. Record, explain and justify your appraoch.Record, explain and justify your appraoch.Record, explain and justify your appraoch.Record, explain and justify your appraoch.Record, explain and justify your appraoch. 
+Record, explain and justify your appraoch. 
+
+
+\subsection{Text Analysis}
+
+Record, explain and justify your appraoch.Complete this part as required by the coursework sheet. Again, be clear, visuals always helps in communicating results. Justify your choices and explain your methods. 
+
+
+
+\subsection{Text Classification}
+
+Use one of the ‘R’ packages to build a classifier that classifies the tweets as leave tweet or remain tweets. 
+
+Complete this part as required by the coursework sheet. Again, be clear, visuals always helps in communicating results. Justify your choices and explain your methods. 
+
+
+\section{Reproducing Results}
+
+You don't need to have a section called \textbf{Reproducing Results}, your report itself will be the answer for this section. 
+
+
+% Clear the page and starte a new page for references 
+
+\clearpage
+% The title for the reference section is called References 
+
+\section{References}\label{pubs}
+
+\printbibliography[heading =none]
+
+
+\clearpage
+
+
+\end{document}
