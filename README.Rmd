@@ -13,7 +13,7 @@ This repository aims to provide a general guidline to help you prepare your cour
 
 2 Project-Guidelines.pdf: This is a PDF file produced using Sweave, notice that it contains a mixture of text, code and the resulting output. Basic Latex commans have been used as well. 
 
-3 Project-Guidelines.Rnw: This is the (Sweave) file, if you have R, Rstudio and Latex installed in your machine, then compiling this file will preduce **Project-Guidelines.pdf** Feel free to chagne / edit it and see the results
+3 Project-Guidelines.Rnw: This is the (Sweave) file, if you have R, Rstudio and Latex installed in your machine, then compiling this file will produce **Project-Guidelines.pdf** Feel free to chagne / edit it and see the results
 
 4 references.bib: This file contains your bibtex items, check the **Project-Guidelines.Rnw** to see how we used this file to cite some papers. It must also be in your working directory.
 
